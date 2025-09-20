@@ -26,15 +26,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="vscode配置文件VSCode上搭建C&#x2F;C++开发环境（vscode配置c&#x2F;c++环境）Windows系统—保姆级教程-阿里云开发者社区 Windows下配置VSCode编译&#x2F;调试C&#x2F;C++：launch.json配置_vscod launch.json没有gdb配置-CSDN博客 1234567891011121314151617181920212223">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://99deomns.github.io/zyh_blog/.io//Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/1.png">
-<meta property="og:image" content="https://99deomns.github.io/zyh_blog/.io//Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/2.png">
-<meta property="og:image" content="https://99deomns.github.io/zyh_blog/.io//Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/3.png">
+<meta property="og:image" content="https://99deomns.github.io/zyh_blog/zyh_blog/2025/09/20/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/1.png">
+<meta property="og:image" content="https://99deomns.github.io/zyh_blog/zyh_blog/2025/09/20/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/2.png">
+<meta property="og:image" content="https://99deomns.github.io/zyh_blog/zyh_blog/2025/09/20/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/3.png">
 <meta property="article:published_time" content="2025-09-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-09-20T15:31:19.951Z">
 <meta property="article:author" content="Zyh">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://99deomns.github.io/zyh_blog/.io//Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/1.png">
+<meta name="twitter:image" content="https://99deomns.github.io/zyh_blog/zyh_blog/2025/09/20/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/Blog/source_posts/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/1.png">
   
   
   
@@ -285,14 +285,14 @@
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bat">task.json //用来配置任务，可以直接执行不同的任务，下面就有两个任务，第一个生成了exe文件，第二个打印当前目录的fileDirname<br>//E:\Desktop\C\test1\test.cpp<br>&#123;<br>	&quot;version&quot;: &quot;<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>&quot;,<br>	&quot;tasks&quot;: [<br>		&#123;<br>			&quot;<span class="hljs-built_in">type</span>&quot;: &quot;cppbuild&quot;,<br>			&quot;<span class="hljs-built_in">label</span>&quot;: &quot;C/C++: g++.exe 生成活动文件&quot;,<br>			&quot;command&quot;: &quot;G:\\x86_64-<span class="hljs-number">15</span>.<span class="hljs-number">2</span>.<span class="hljs-number">0</span>-release-win32-seh-ucrt-rt_v13-rev0\\mingw64\\bin\\g++.exe&quot;,<br>			&quot;args&quot;: [<br>				&quot;-fdiagnostics-<span class="hljs-built_in">color</span>=always&quot;,<br>				&quot;-g&quot;,<br>				&quot;test1\\test.cpp&quot;, //这里最好还是用绝对路径，否则如果不在E:\Desktop\C这个路径下运行那就搜不到这个文件<br>				&quot;-o&quot;,<br>				&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot; //这里的$&#123;fileDirname&#125;是当前目录，<br>												//$&#123;fileBasenameNoExtension&#125;是当前文件，详细说明见图一<br>				// &quot;a.exe&quot;<br>			],<br>			&quot;options&quot;: &#123;<br>				// &quot;cwd&quot;: &quot;$&#123;fileDirname&#125;&quot;<br>				&quot;cwd&quot;: &quot;E:\\Desktop\\C&quot;<br>			&#125;,<br>			&quot;problemMatcher&quot;: [<br>				&quot;$gcc&quot;<br>			],<br>			&quot;group&quot;: &quot;build&quot;,<br>			&quot;detail&quot;: &quot;编译器: G:\\x86_64-<span class="hljs-number">15</span>.<span class="hljs-number">2</span>.<span class="hljs-number">0</span>-release-win32-seh-ucrt-rt_v13-rev0\\mingw64\\bin\\g++.exe&quot;<br>		&#125;,<br>        &#123;//注意这里的fileDirname是在哪里执行的就是哪个文件的文件夹见图二<br>            &quot;<span class="hljs-built_in">label</span>&quot;: &quot;输出fileDirname&quot;,<br>            &quot;<span class="hljs-built_in">type</span>&quot;: &quot;shell&quot;,<br>            &quot;command&quot;: &quot;<span class="hljs-built_in">echo</span> $&#123;fileDirname&#125;&quot;,<br>            &quot;group&quot;: &quot;none&quot;<br>        &#125;<br>	]<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>ctrl+shift+p 运行任务，然后就是代码块中的两个任务选</p>
-<p><img src="/zyh_blog/.io//Blog\source_posts\vscode配置文件\1.png" srcset="/zyh_blog/img/loading.gif" lazyload></p>
+<p><img src="/zyh_blog/zyh_blog/2025/09/20/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/Blog\source_posts\vscode配置文件\1.png" srcset="/zyh_blog/img/loading.gif" lazyload></p>
 <center>图1 在task.json文件下运行任务</center>
 
 <p>此时生成了task.exe，但实际上他就是test.cpp编译好的文件但是由于13行给他定义了文件名称和路径，如果在test.cpp文件下运行任务最后就是在test1文件夹下生成了test.exe文件，总之都是自己定义的；</p>
-<p><img src="/zyh_blog/.io//Blog\source_posts\vscode配置文件\2.png" srcset="/zyh_blog/img/loading.gif" lazyload></p>
+<p><img src="/zyh_blog/zyh_blog/2025/09/20/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/Blog\source_posts\vscode配置文件\2.png" srcset="/zyh_blog/img/loading.gif" lazyload></p>
 <center>图2</center>
 
-<p><img src="/zyh_blog/.io//Blog\source_posts\vscode配置文件\3.png" srcset="/zyh_blog/img/loading.gif" lazyload></p>
+<p><img src="/zyh_blog/zyh_blog/2025/09/20/vscode%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/Blog\source_posts\vscode配置文件\3.png" srcset="/zyh_blog/img/loading.gif" lazyload></p>
 <center>图 3 </center>
 
 
